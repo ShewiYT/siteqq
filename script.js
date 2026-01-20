@@ -1,4 +1,4 @@
-// X-GEN HACK - ИСПРАВЛЕННАЯ ВЕРСИЯ
+// X-GEN HACK - ФИНАЛЬНАЯ ВЕРСИЯ
 console.log('[X-GEN] System initializing...');
 
 let currentLang = 'ru';
@@ -85,7 +85,7 @@ function initSite() {
     // 6. Инициализация переключателя языка
     initLangSwitcher();
     
-    // 7. Инициализация FAQ
+    // 7. Инициализация FAQ (аккордеон)
     initFAQ();
     
     // 8. Typewriter эффект
@@ -381,8 +381,8 @@ function initDownloadButtons() {
                 
                 showNotification(
                     currentLang === 'ru' 
-                        ? `X-GEN.EXE скачан для ${gameName}!` 
-                        : `X-GEN.EXE downloaded for ${gameName}!`
+                        ? `X-GEN.EXE скачан для ${gameName}! Запустите от имени администратора.` 
+                        : `X-GEN.EXE downloaded for ${gameName}! Run as administrator.`
                 );
             }, 2000);
         }
@@ -397,19 +397,20 @@ function generateDailyUpdates() {
     updatesList.innerHTML = '';
     
     const updates = [
-        { game: 'Valorant', type: 'Aimbot улучшен', desc: 'Обновлен алгоритм прицеливания, уменьшена задержка' },
-        { game: 'Fortnite', type: 'ESP обновлен', desc: 'Добавлено отображение лута и сундуков' },
-        { game: 'Rust', type: 'Обход EAC', desc: 'Исправлена проблема с детектом новой версии' },
-        { game: 'CS2', type: 'Skin Changer', desc: 'Добавлены новые скины и паттерны' },
-        { game: 'Apex Legends', type: 'No Recoil', desc: 'Улучшена система контроля отдачи' },
-        { game: 'The Finals', type: 'Wallhack', desc: 'Исправлено отображение через разрушаемые стены' },
-        { game: 'Warzone', type: 'Обновление лоадера', desc: 'Улучшена скорость инжекта' }
+        { game: 'Valorant', type: 'Aimbot улучшен', desc: 'Обновлен алгоритм прицеливания, уменьшена задержка, исправлен детект Vanguard' },
+        { game: 'Fortnite', type: 'ESP обновлен', desc: 'Добавлено отображение лута и сундуков, улучшена стабильность на DX12' },
+        { game: 'Rust', type: 'Обход EAC', desc: 'Исправлена проблема с детектом новой версии EAC, добавлен спуфер сигнатур' },
+        { game: 'CS2', type: 'Skin Changer', desc: 'Добавлены новые скины и паттерны, улучшена скорость замены моделей' },
+        { game: 'Apex Legends', type: 'No Recoil v2.5', desc: 'Улучшена система контроля отдачи, добавлены профили для каждого оружия' },
+        { game: 'The Finals', type: 'Wallhack v3.1', desc: 'Исправлено отображение через разрушаемые стены, добавлена подсветка оборудования' },
+        { game: 'Warzone', type: 'Обновление лоадера', desc: 'Улучшена скорость инжекта, уменьшено время загрузки чита в память' },
+        { game: 'Escape from Tarkov', type: 'Radar Hack', desc: 'Обновлена карта всех локаций, добавлены метки ключей и квестовых предметов' }
     ];
     
-    // Берем последние 3 обновления
-    const recentUpdates = updates.slice(0, 3);
+    // Берем последние 4 обновления
+    const recentUpdates = updates.slice(0, 4);
     
-    // Генерируем даты за последние 3 дня
+    // Генерируем даты за последние 4 дня
     const today = new Date();
     
     recentUpdates.forEach((update, index) => {
@@ -417,7 +418,10 @@ function generateDailyUpdates() {
         date.setDate(date.getDate() - index);
         
         const day = date.getDate();
-        const month = date.toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { month: 'short' }).toUpperCase();
+        const monthNames = currentLang === 'ru' 
+            ? ['ЯНВ', 'ФЕВ', 'МАР', 'АПР', 'МАЙ', 'ИЮН', 'ИЮЛ', 'АВГ', 'СЕН', 'ОКТ', 'НОЯ', 'ДЕК']
+            : ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+        const month = monthNames[date.getMonth()];
         
         const updateCard = document.createElement('div');
         updateCard.className = 'update-card';
@@ -436,25 +440,34 @@ function generateDailyUpdates() {
     });
 }
 
-// ==================== FAQ СИСТЕМА ====================
+// ==================== FAQ СИСТЕМА (АККОРДЕОН) ====================
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
     
+    // Закрываем все FAQ при открытии нового
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
         question.addEventListener('click', () => {
-            // Закрываем другие открытые FAQ
+            // Если текущий FAQ уже открыт, закрываем его
+            const isActive = item.classList.contains('active');
+            
+            // Закрываем все FAQ
             faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
+                otherItem.classList.remove('active');
             });
             
-            // Открываем/закрываем текущий
-            item.classList.toggle('active');
+            // Если текущий FAQ был закрыт, открываем его
+            if (!isActive) {
+                item.classList.add('active');
+            }
         });
     });
+    
+    // По умолчанию открываем первый FAQ
+    if (faqItems.length > 0) {
+        faqItems[0].classList.add('active');
+    }
 }
 
 // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
@@ -462,13 +475,14 @@ function updateOnlineCounter() {
     const counter = document.getElementById('onlineCount');
     if (!counter) return;
     
-    let count = 8421;
+    let count = 12847;
     
     setInterval(() => {
-        const change = Math.floor(Math.random() * 100) - 50;
-        count = Math.max(8000, count + change);
+        const change = Math.floor(Math.random() * 200) - 100;
+        count = Math.max(12000, count + change);
         counter.textContent = count.toLocaleString();
         
+        // Анимация обновления
         counter.style.color = '#ff00ff';
         setTimeout(() => {
             counter.style.color = '#39ff14';
@@ -531,8 +545,16 @@ function initTypewriter() {
     setTimeout(typeWriter, 1000);
 }
 
-// Создаем фейковый файл x-gen.exe в папке assets
-function createFakeLoader() {
+// ==================== ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ ====================
+// Создаем фейковый файл x-gen.exe при необходимости
+function createFakeExeFile() {
     // Это функция только для демонстрации
-    console.log('[X-GEN] Fake loader would be created here');
+    // В реальном проекте здесь был бы код для создания файла
+    console.log('[X-GEN] Fake EXE file would be created here');
 }
+
+// Инициализация после полной загрузки
+window.addEventListener('load', function() {
+    console.log('[X-GEN] Window fully loaded');
+    // Дополнительные инициализации при необходимости
+});
