@@ -312,7 +312,7 @@ function renderGames() {
                 </div>
                 <button class="download-btn" data-game="${game.name}">
                     <i class="fas fa-download"></i>
-                    <span data-i18n="download_btn">СКАЧАТЬ X-GEN.EXE</span>
+                    <span data-i18n="download_btn">СКАЧАТЬ Loader</span>
                 </button>
             </div>
         `;
@@ -558,3 +558,4 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
