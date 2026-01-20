@@ -178,7 +178,7 @@ function initGames() {
     gamesData = [
         {
             id: 1, name: 'Rust', category: 'other',
-            image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463150964948209674/ChatGPT_Image_Jan_20_2026_12_36_19_PM.png?ex=6970c906&is=696f7786&hm=c0daf7050538629ea131eab5709729c5c3eac8d2177aca14247dbef70a64ba2d&=&format=webp&quality=lossless&width=1533&height=1022',
             cheats: [
                 { name: 'ESP Vision', desc_key: 'rust_cheat1' },
                 { name: 'Aimbot Pro', desc_key: 'rust_cheat2' },
@@ -187,7 +187,7 @@ function initGames() {
         },
         {
             id: 2, name: 'Roblox', category: 'other',
-            image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463150965455847580/ChatGPT_Image_Jan_20_2026_12_37_47_PM.png?ex=6970c906&is=696f7786&hm=4867d7735ef89c07fa9e66441775df692f9981df82aae496e056deaef9742455&=&format=webp&quality=lossless&width=1533&height=1022',
             cheats: [
                 { name: 'Script Executor', desc_key: 'roblox_cheat1' },
                 { name: 'Speed Hack', desc_key: 'roblox_cheat2' }
@@ -195,7 +195,7 @@ function initGames() {
         },
         {
             id: 3, name: 'GTA 5 Online', category: 'other',
-            image: 'https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463150966026145873/ChatGPT_Image_Jan_20_2026_12_39_02_PM.png?ex=6970c906&is=696f7786&hm=b5a56ff9364270d31eb25ff92b4ba6c4f97fcc97d15ce3d94a61195e0c5359dd&=&format=webp&quality=lossless&width=1533&height=1022',
             cheats: [
                 { name: 'Money Drop', desc_key: 'gta_cheat1' },
                 { name: 'God Mode', desc_key: 'gta_cheat2' },
@@ -576,4 +576,5 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
 
