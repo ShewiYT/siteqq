@@ -37,7 +37,7 @@ const translations_en = {
         "filter_battle": "Battle Royale",
         "filter_other": "Other",
         "top_cheats": "Top Cheats",
-        "download_btn": "DOWNLOAD Loader",
+        "download_btn": "DOWNLOAD X-GEN.EXE",
         "downloading": "DOWNLOADING...",
         
         // Cheat descriptions for games
@@ -114,4 +114,3 @@ const translations_en = {
         "footer_copyright": "© 2026 X-GEN HACK. All rights reserved."
     }
 };
-
