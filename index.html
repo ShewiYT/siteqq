@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="X-Gen Hack - мощные читы для игр">
+    <title data-i18n="site_title">X-GEN HACK</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><path d='M20,20 L50,80 L80,20 L35,50 L65,50 Z' fill='none' stroke='%2300eeff' stroke-width='8'/></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Защитный экран -->
+    <div id="checkpoint" class="checkpoint-overlay active">
+        <div class="checkpoint-container">
+            <div class="cyber-grid"></div>
+            <h1 class="neon-text" data-i18n="checkpoint_title">ПРОВЕРКА БЕЗОПАСНОСТИ</h1>
+            <div class="terminal">
+                <p class="terminal-text" data-i18n="checkpoint_question">Введите результат: 2 + 3 =</p>
+                <div class="input-group">
+                    <input type="text" id="captchaInput" placeholder="5" autocomplete="off">
+                    <button id="verifyBtn" class="cyber-button" data-i18n="checkpoint_verify">ПРОВЕРИТЬ</button>
+                </div>
+                <div class="scan-line"></div>
+                <p class="status-text" id="statusText">[ИНИЦИАЛИЗАЦИЯ...]</p>
+            </div>
+            <div class="hint">
+                <i class="fas fa-shield-alt"></i>
+                <span data-i18n="checkpoint_hint">Требуется подтверждение человечности</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент (скрыт до проверки) -->
+    <div id="mainContent" class="hidden">
+        <!-- Шапка -->
+        <header class="cyber-header">
+            <div class="container">
+                <div class="header-grid">
+                    <div class="logo-container">
+                        <div class="neon-logo">
+                            <span class="logo-x">X</span>
+                            <span class="logo-text">-GEN HACK</span>
+                        </div>
+                        <div class="logo-subtitle" data-i18n="logo_subtitle">ВЗЛОМАЙ ИГРУ</div>
+                    </div>
+                    
+                    <nav class="cyber-nav">
+                        <ul>
+                            <li><a href="#home" data-i18n="nav_home">ГЛАВНАЯ</a></li>
+                            <li><a href="#cheats" data-i18n="nav_cheats">ЧИТЫ</a></li>
+                            <li><a href="#updates" data-i18n="nav_updates">ОБНОВЛЕНИЯ</a></li>
+                            <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="header-controls">
+                        <div class="online-counter">
+                            <i class="fas fa-user-secret"></i>
+                            <span data-i18n="online_text">Читеров онлайн:</span>
+                            <span id="onlineCount" class="counter">8,421</span>
+                        </div>
+                        
+                        <div class="lang-switcher">
+                            <button id="langToggle" class="lang-btn">
+                                <span class="lang-flag">🇷🇺</span>
+                                <span class="lang-code">RU</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="data-stream"></div>
+        </header>
+
+        <!-- Главный экран -->
+        <section id="home" class="hero-section">
+            <div class="cyber-grid-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="typewriter" id="heroTitle" data-i18n="hero_title">МОЩНЫЕ ЧИТЫ ДЛЯ ТВОИХ ИГР</h1>
+                        <p class="hero-desc" data-i18n="hero_desc">Невидимые ESP, совершенные Aimbot, полный контроль. Обновляется ежедневно. Без банов.</p>
+                        
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">15,892</div>
+                                <div class="stat-label" data-i18n="stat_users">Активных пользователей</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">327</div>
+                                <div class="stat-label" data-i18n="stat_games">Игр поддержано</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">99.7%</div>
+                                <div class="stat-label" data-i18n="stat_undetected">Необнаружено</div>
+                            </div>
+                        </div>
+                        
+                        <a href="#cheats" class="cyber-button-lg pulse">
+                            <i class="fas fa-download"></i>
+                            <span data-i18n="hero_cta">ПОЛУЧИТЬ ДОСТУП</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="hack-terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="terminal-title" data-i18n="terminal_title">X-GEN LOADER v4.2</span>
+                            </div>
+                            <div class="terminal-body">
+                                <pre>[>] Инициализация ядра... УСПЕХ
+[>] Загрузка обходчика... УСПЕХ
+[>] Внедрение в память... УСПЕХ
+[>] Защита от античита... АКТИВИРОВАНА
+[>] Система готова к работе
+[>] Статус: <span class="success-text">НЕОБНАРУЖЕНО</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с играми -->
+        <section id="cheats" class="games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="games_title">ВЫБЕРИ ИГРУ</h2>
+                    <p data-i18n="games_subtitle">Самые популярные игры с поддержкой читов</p>
+                </div>
+                
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Все</button>
+                    <button class="filter-btn" data-filter="fps" data-i18n="filter_fps">Шутеры</button>
+                    <button class="filter-btn" data-filter="battle" data-i18n="filter_battle">Баттл-рояли</button>
+                    <button class="filter-btn" data-filter="other" data-i18n="filter_other">Другие</button>
+                </div>
+                
+                <div id="gamesGrid" class="games-grid">
+                    <!-- Карточки будут сгенерированы через JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция обновлений -->
+        <section id="updates" class="updates-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="updates_title">ПОСЛЕДНИЕ ОБНОВЛЕНИЯ</h2>
+                    <p data-i18n="updates_subtitle">Читы обновляются ежедневно для поддержания стелс-режима</p>
+                </div>
+                
+                <div class="updates-list">
+                    <div class="update-card">
+                        <div class="update-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month" data-i18n="month_jan">ЯНВ</span>
+                        </div>
+                        <div class="update-content">
+                            <h3 data-i18n="update1_title">The Finals - Полный пакет v2.1</h3>
+                            <p data-i18n="update1_desc">Добавлен смарт Aimbot с учётом физики разрушений. Исправлены детекты EAC.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="update-card">
+                        <div class="update-date">
+                            <span class="date-day">14</span>
+                            <span class="date-month" data-i18n="month_jan">ЯНВ</span>
+                        </div>
+                        <div class="update-content">
+                            <h3 data-i18n="update2_title">Rust - ESP улучшен</h3>
+                            <p data-i18n="update2_desc">Теперь показывает контейнеры, лут и игроков сквозь стены. Обновлён инжектор.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="update-card">
+                        <div class="update-date">
+                            <span class="date-day">13</span>
+                            <span class="date-month" data-i18n="month_jan">ЯНВ</span>
+                        </div>
+                        <div class="update-content">
+                            <h3 data-i18n="update3_title">Новая игра: Ark Raiders</h3>
+                            <p data-i18n="update3_desc">Полная поддержка с первого дня релиза. ESP, Aimbot, Wallhack.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Футер -->
+        <footer class="cyber-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">X-GEN HACK</div>
+                        <p class="footer-desc" data-i18n="footer_desc">Самые продвинутые игровые читы с 2018 года. Постоянные обновления и поддержка.</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-i18n="footer_links">Ссылки</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" data-i18n="footer_tos">Лицензионное соглашение</a></li>
+                            <li><a href="#" data-i18n="footer_privacy">Политика конфиденциальности</a></li>
+                            <li><a href="#" data-i18n="footer_refund">Политика возвратов</a></li>
+                            <li><a href="#" data-i18n="footer_contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-i18n="footer_warning">Предупреждение</h4>
+                        <p class="warning-text" data-i18n="footer_warning_text">Использование читов может привести к блокировке аккаунта. Только для образовательных целей. Мы не несём ответственности.</p>
+                        <div class="copyright" data-i18n="footer_copyright">© 2024 X-GEN HACK. Все права защищены.</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Чат поддержки -->
+        <div class="chat-widget">
+            <div class="chat-header">
+                <i class="fas fa-headset"></i>
+                <span id="chatTitle" data-i18n="chat_title">Онлайн поддержка</span>
+                <span class="chat-status online"></span>
+            </div>
+            
+            <div class="chat-body">
+                <div id="chatMessages" class="chat-messages">
+                    <!-- Сообщения загружаются через JavaScript -->
+                </div>
+                
+                <div class="chat-input-group">
+                    <input type="text" id="chatInput" placeholder="Введите сообщение..." data-i18n-placeholder="chat_placeholder">
+                    <button id="sendChatBtn" class="chat-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="lang_ru.js"></script>
+    <script src="lang_en.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
