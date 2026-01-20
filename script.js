@@ -221,7 +221,7 @@ function initGames() {
         },
         {
             id: 6, name: 'CS2', category: 'fps',
-            image: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463150964247629915/ChatGPT_Image_Jan_20_2026_12_35_28_PM.png?ex=6970c905&is=696f7785&hm=bf88c0743e4101c628d0243d5746e19c3d9e1f9efab09e421606bba1cbdc9786&=&format=webp&quality=lossless&width=1533&height=1022',
             cheats: [
                 { name: 'Triggerbot', desc_key: 'cs2_cheat1' },
                 { name: 'Skin Changer', desc_key: 'cs2_cheat2' },
@@ -576,3 +576,4 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
