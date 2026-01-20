@@ -1,7 +1,6 @@
-// X-GEN HACK - ИСПРАВЛЕННЫЙ СКРИПТ
+// X-GEN HACK - ИСПРАВЛЕННАЯ ВЕРСИЯ
 console.log('[X-GEN] System initializing...');
 
-// Глобальные переменные
 let currentLang = 'ru';
 let translations = {};
 let gamesData = [];
@@ -16,36 +15,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusText = document.getElementById('statusText');
     const mainContent = document.getElementById('mainContent');
     
-    console.log('[X-GEN] Elements found:', {
-        checkpoint: !!checkpoint,
-        captchaInput: !!captchaInput,
-        verifyBtn: !!verifyBtn,
-        mainContent: !!mainContent
-    });
-    
     // Фокус на поле ввода
     setTimeout(() => {
         if (captchaInput) {
             captchaInput.focus();
-            console.log('[X-GEN] Focus set on captcha input');
         }
     }, 500);
     
-    // Проверка капчи
     function verifyCaptcha() {
-        console.log('[X-GEN] Captcha verification triggered');
         const answer = captchaInput.value.trim();
-        console.log('[X-GEN] User input:', answer);
         
-        // Проверяем ответ
         if (answer === '5' || answer === '2+3=5' || answer === '2 + 3 = 5') {
-            console.log('[X-GEN] Captcha passed');
             statusText.textContent = '[ПРОВЕРКА ПРОЙДЕНА. ДОСТУП РАЗРЕШЕН...]';
             statusText.style.color = '#39ff14';
             
-            // Анимация завершения
             setTimeout(() => {
-                // Прямая манипуляция с DOM
                 checkpoint.style.opacity = '0';
                 checkpoint.style.transition = 'opacity 0.8s ease';
                 
@@ -55,52 +39,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     mainContent.style.opacity = '0';
                     mainContent.style.display = 'block';
                     
-                    // Плавное появление
                     setTimeout(() => {
                         mainContent.style.transition = 'opacity 1s ease';
                         mainContent.style.opacity = '1';
-                        console.log('[X-GEN] Main content revealed');
                         initSite();
                     }, 50);
                 }, 800);
             }, 1500);
         } else {
-            console.log('[X-GEN] Captcha failed');
             statusText.textContent = '[ОШИБКА. ПОВТОРИТЕ...]';
             statusText.style.color = '#ff5555';
             captchaInput.value = '';
             captchaInput.focus();
-            
-            // Анимация ошибки
-            captchaInput.style.borderColor = '#ff5555';
-            captchaInput.style.boxShadow = '0 0 10px #ff5555';
-            setTimeout(() => {
-                captchaInput.style.borderColor = '#00eeff';
-                captchaInput.style.boxShadow = 'none';
-            }, 1000);
         }
     }
     
-    // Обработчики событий
     if (verifyBtn) {
         verifyBtn.addEventListener('click', verifyCaptcha);
-        console.log('[X-GEN] Verify button event listener attached');
     }
     
     if (captchaInput) {
         captchaInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                console.log('[X-GEN] Enter pressed in captcha');
-                verifyCaptcha();
-            }
+            if (e.key === 'Enter') verifyCaptcha();
         });
     }
 });
 
 // ==================== ИНИЦИАЛИЗАЦИЯ САЙТА ====================
 function initSite() {
-    console.log('[X-GEN] Site initialization started');
-    
     // 1. Определение языка
     detectLanguage();
     
@@ -110,8 +76,8 @@ function initSite() {
     // 3. Инициализация игр
     initGames();
     
-    // 4. Инициализация чата
-    initChat();
+    // 4. Инициализация обновлений
+    generateDailyUpdates();
     
     // 5. Обновление счетчика
     updateOnlineCounter();
@@ -119,20 +85,11 @@ function initSite() {
     // 6. Инициализация переключателя языка
     initLangSwitcher();
     
-    // 7. Показать чат
-    setTimeout(() => {
-        const chatWidget = document.querySelector('.chat-widget');
-        if (chatWidget) {
-            chatWidget.style.display = 'block';
-            chatWidget.style.opacity = '0';
-            setTimeout(() => {
-                chatWidget.style.transition = 'opacity 0.5s ease';
-                chatWidget.style.opacity = '1';
-            }, 100);
-        }
-    }, 3000);
+    // 7. Инициализация FAQ
+    initFAQ();
     
-    console.log('[X-GEN] Site initialization complete');
+    // 8. Typewriter эффект
+    initTypewriter();
 }
 
 // ==================== МНОГОЯЗЫЧНОСТЬ ====================
@@ -140,62 +97,45 @@ function detectLanguage() {
     const browserLang = navigator.language || navigator.userLanguage;
     const langCode = browserLang.split('-')[0].toLowerCase();
     
-    console.log('[X-GEN] Browser language detected:', browserLang, '->', langCode);
-    
     if (langCode === 'en') {
         currentLang = 'en';
     } else {
         currentLang = 'ru';
     }
     
-    // Проверка сохраненного выбора
     const savedLang = localStorage.getItem('xgen_lang');
     if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
         currentLang = savedLang;
-        console.log('[X-GEN] Using saved language:', currentLang);
     }
     
     document.documentElement.lang = currentLang;
-    console.log('[X-GEN] Current language set to:', currentLang);
 }
 
 function loadTranslations() {
-    console.log('[X-GEN] Loading translations for:', currentLang);
-    
     if (currentLang === 'en' && typeof translations_en !== 'undefined') {
         translations = translations_en.en;
-        console.log('[X-GEN] English translations loaded');
     } else {
         translations = translations_ru.ru;
-        console.log('[X-GEN] Russian translations loaded');
     }
     
     applyTranslations();
 }
 
 function applyTranslations() {
-    console.log('[X-GEN] Applying translations...');
-    let translatedCount = 0;
-    
-    // Текстовые элементы
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[key]) {
             element.textContent = translations[key];
-            translatedCount++;
         }
     });
     
-    // Placeholder'ы
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
         if (translations[key]) {
             element.placeholder = translations[key];
-            translatedCount++;
         }
     });
     
-    // Обновление флага и кода языка
     const langFlag = document.querySelector('.lang-flag');
     const langCode = document.querySelector('.lang-code');
     
@@ -206,8 +146,6 @@ function applyTranslations() {
         if (langFlag) langFlag.textContent = '🇷🇺';
         if (langCode) langCode.textContent = 'RU';
     }
-    
-    console.log(`[X-GEN] ${translatedCount} elements translated`);
 }
 
 function initLangSwitcher() {
@@ -215,27 +153,24 @@ function initLangSwitcher() {
     if (!langToggle) return;
     
     langToggle.addEventListener('click', function() {
-        console.log('[X-GEN] Language toggle clicked');
         currentLang = currentLang === 'ru' ? 'en' : 'ru';
         localStorage.setItem('xgen_lang', currentLang);
         document.documentElement.lang = currentLang;
         
-        // Анимация переключения
         this.style.transform = 'scale(0.9)';
         setTimeout(() => {
             this.style.transform = 'scale(1)';
         }, 200);
         
         loadTranslations();
-        initGames(); // Перерисовываем игры с новыми переводами
-        initChat(); // Перезагружаем чат
+        initGames();
+        generateDailyUpdates();
+        initFAQ();
     });
 }
 
 // ==================== СИСТЕМА ИГР ====================
 function initGames() {
-    console.log('[X-GEN] Initializing games system');
-    
     gamesData = [
         {
             id: 1, name: 'Rust', category: 'other',
@@ -304,6 +239,38 @@ function initGames() {
                 { name: 'Loot ESP', desc_key: 'tarkov_cheat1' },
                 { name: 'Radar Hack', desc_key: 'tarkov_cheat2' }
             ]
+        },
+        {
+            id: 9, name: 'PUBG', category: 'battle',
+            image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            cheats: [
+                { name: 'ESP Vision', desc_key: 'pubg_cheat1' },
+                { name: 'Aimbot', desc_key: 'pubg_cheat2' }
+            ]
+        },
+        {
+            id: 10, name: 'Valorant', category: 'fps',
+            image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            cheats: [
+                { name: 'Aimbot', desc_key: 'valorant_cheat1' },
+                { name: 'Wallhack', desc_key: 'valorant_cheat2' }
+            ]
+        },
+        {
+            id: 11, name: 'Fortnite', category: 'battle',
+            image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            cheats: [
+                { name: 'Soft Aim', desc_key: 'fortnite_cheat1' },
+                { name: 'ESP', desc_key: 'fortnite_cheat2' }
+            ]
+        },
+        {
+            id: 12, name: 'Destiny 2', category: 'fps',
+            image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            cheats: [
+                { name: 'Auto Aim', desc_key: 'destiny_cheat1' },
+                { name: 'Unlimited Ammo', desc_key: 'destiny_cheat2' }
+            ]
         }
     ];
     
@@ -314,12 +281,8 @@ function initGames() {
 
 function renderGames() {
     const grid = document.getElementById('gamesGrid');
-    if (!grid) {
-        console.error('[X-GEN] Games grid not found!');
-        return;
-    }
+    if (!grid) return;
     
-    console.log('[X-GEN] Rendering', gamesData.length, 'games');
     grid.innerHTML = '';
     
     gamesData.forEach(game => {
@@ -349,7 +312,7 @@ function renderGames() {
                 </div>
                 <button class="download-btn" data-game="${game.name}">
                     <i class="fas fa-download"></i>
-                    <span data-i18n="download_btn">СКАЧАТЬ ЧИТ</span>
+                    <span data-i18n="download_btn">СКАЧАТЬ X-GEN.EXE</span>
                 </button>
             </div>
         `;
@@ -357,12 +320,10 @@ function renderGames() {
         grid.appendChild(card);
     });
     
-    // Применяем переводы к новым элементам
     applyTranslations();
 }
 
 function initFilters() {
-    console.log('[X-GEN] Initializing filters');
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -391,14 +352,10 @@ function initFilters() {
 }
 
 function initDownloadButtons() {
-    console.log('[X-GEN] Setting up download buttons');
-    
     document.addEventListener('click', function(e) {
         if (e.target.closest('.download-btn')) {
             const button = e.target.closest('.download-btn');
             const gameName = button.dataset.game;
-            
-            console.log('[X-GEN] Download requested for:', gameName);
             
             // Анимация загрузки
             const originalHTML = button.innerHTML;
@@ -406,137 +363,98 @@ function initDownloadButtons() {
             button.disabled = true;
             applyTranslations();
             
-            // Имитация загрузки
             setTimeout(() => {
-                // Создаем фейковый файл
-                const fakeContent = `X-GEN Cheat Loader for ${gameName}\nVersion: 4.2\nStatus: Undetected\n\nThis is a demo file. Real cheat would be here.`;
-                const blob = new Blob([fakeContent], { type: 'application/octet-stream' });
-                const url = window.URL.createObjectURL(blob);
-                
+                // Всегда скачиваем один файл x-gen.exe из папки assets
                 const link = document.createElement('a');
-                link.href = url;
-                link.download = `X-GEN_${gameName.replace(/\s+/g, '_')}_Cheat.exe`;
+                link.href = 'assets/x-gen.exe';
+                link.download = 'x-gen.exe';
+                
+                // Добавляем и кликаем
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-                window.URL.revokeObjectURL(url);
                 
                 // Восстановление кнопки
                 button.innerHTML = originalHTML;
                 button.disabled = false;
                 applyTranslations();
                 
-                // Уведомление
                 showNotification(
                     currentLang === 'ru' 
-                        ? `Чит для "${gameName}" скачан!` 
-                        : `Cheat for "${gameName}" downloaded!`
+                        ? `X-GEN.EXE скачан для ${gameName}!` 
+                        : `X-GEN.EXE downloaded for ${gameName}!`
                 );
             }, 2000);
         }
     });
 }
 
-// ==================== ЧАТ ПОДДЕРЖКИ ====================
-function initChat() {
-    console.log('[X-GEN] Initializing chat system');
-    const chatMessagesDiv = document.getElementById('chatMessages');
-    if (!chatMessagesDiv) return;
+// ==================== ДИНАМИЧЕСКИЕ ОБНОВЛЕНИЯ ====================
+function generateDailyUpdates() {
+    const updatesList = document.getElementById('updatesList');
+    if (!updatesList) return;
     
-    chatMessagesDiv.innerHTML = '';
+    updatesList.innerHTML = '';
     
-    let messages;
-    if (currentLang === 'en') {
-        messages = [
-            { type: 'bot', text: 'Support Bot: Hello! Need help with cheats?' },
-            { type: 'user', text: 'User1337: The Rust cheat works perfectly!' },
-            { type: 'bot', text: 'Support Bot: Great! Run as admin for best results.' },
-            { type: 'user', text: 'HackerPro: When is Valorant update?' },
-            { type: 'bot', text: 'Support Bot: Update scheduled for tomorrow.' }
-        ];
-    } else {
-        messages = [
-            { type: 'bot', text: 'Поддержка: Здравствуйте! Нужна помощь?' },
-            { type: 'user', text: 'User1337: Чит на Rust работает отлично!' },
-            { type: 'bot', text: 'Поддержка: Запускайте от администратора.' },
-            { type: 'user', text: 'HackerPro: Когда обновление для Valorant?' },
-            { type: 'bot', text: 'Поддержка: Запланировано на завтра.' }
-        ];
-    }
+    const updates = [
+        { game: 'Valorant', type: 'Aimbot улучшен', desc: 'Обновлен алгоритм прицеливания, уменьшена задержка' },
+        { game: 'Fortnite', type: 'ESP обновлен', desc: 'Добавлено отображение лута и сундуков' },
+        { game: 'Rust', type: 'Обход EAC', desc: 'Исправлена проблема с детектом новой версии' },
+        { game: 'CS2', type: 'Skin Changer', desc: 'Добавлены новые скины и паттерны' },
+        { game: 'Apex Legends', type: 'No Recoil', desc: 'Улучшена система контроля отдачи' },
+        { game: 'The Finals', type: 'Wallhack', desc: 'Исправлено отображение через разрушаемые стены' },
+        { game: 'Warzone', type: 'Обновление лоадера', desc: 'Улучшена скорость инжекта' }
+    ];
     
-    messages.forEach(msg => {
-        addChatMessage(msg.text, msg.type);
-    });
+    // Берем последние 3 обновления
+    const recentUpdates = updates.slice(0, 3);
     
-    // Обработчики чата
-    const chatInput = document.getElementById('chatInput');
-    const sendBtn = document.getElementById('sendChatBtn');
+    // Генерируем даты за последние 3 дня
+    const today = new Date();
     
-    if (sendBtn) {
-        sendBtn.addEventListener('click', sendChatMessage);
-    }
-    
-    if (chatInput) {
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') sendChatMessage();
-        });
-    }
-}
-
-function sendChatMessage() {
-    const input = document.getElementById('chatInput');
-    const message = input.value.trim();
-    
-    if (!message) return;
-    
-    // Сообщение пользователя
-    addChatMessage(`Вы: ${message}`, 'user');
-    input.value = '';
-    
-    // Ответ бота
-    setTimeout(() => {
-        let responses;
-        if (currentLang === 'en') {
-            responses = [
-                'Support Bot: Please check our FAQ section.',
-                'Support Bot: Our cheats are updated daily.',
-                'Support Bot: Disable antivirus before use.',
-                'Support Bot: Download the latest loader.',
-                'Support Bot: Thanks for your feedback!'
-            ];
-        } else {
-            responses = [
-                'Поддержка: Проверьте раздел FAQ.',
-                'Поддержка: Читы обновляются ежедневно.',
-                'Поддержка: Отключите антивирус.',
-                'Поддержка: Скачайте последнюю версию.',
-                'Поддержка: Спасибо за отзыв!'
-            ];
-        }
+    recentUpdates.forEach((update, index) => {
+        const date = new Date(today);
+        date.setDate(date.getDate() - index);
         
-        const response = responses[Math.floor(Math.random() * responses.length)];
-        addChatMessage(response, 'bot');
-    }, 1000 + Math.random() * 2000);
+        const day = date.getDate();
+        const month = date.toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { month: 'short' }).toUpperCase();
+        
+        const updateCard = document.createElement('div');
+        updateCard.className = 'update-card';
+        updateCard.innerHTML = `
+            <div class="update-date">
+                <span class="date-day">${day}</span>
+                <span class="date-month">${month}</span>
+            </div>
+            <div class="update-content">
+                <h3>${update.game} - ${update.type}</h3>
+                <p>${update.desc}</p>
+            </div>
+        `;
+        
+        updatesList.appendChild(updateCard);
+    });
 }
 
-function addChatMessage(text, type) {
-    const chatMessagesDiv = document.getElementById('chatMessages');
-    if (!chatMessagesDiv) return;
+// ==================== FAQ СИСТЕМА ====================
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
     
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${type}`;
-    messageDiv.textContent = text;
-    messageDiv.style.opacity = '0';
-    
-    chatMessagesDiv.appendChild(messageDiv);
-    
-    // Анимация появления
-    setTimeout(() => {
-        messageDiv.style.transition = 'opacity 0.3s ease';
-        messageDiv.style.opacity = '1';
-    }, 10);
-    
-    chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Закрываем другие открытые FAQ
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Открываем/закрываем текущий
+            item.classList.toggle('active');
+        });
+    });
 }
 
 // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
@@ -551,7 +469,6 @@ function updateOnlineCounter() {
         count = Math.max(8000, count + change);
         counter.textContent = count.toLocaleString();
         
-        // Мигание при обновлении
         counter.style.color = '#ff00ff';
         setTimeout(() => {
             counter.style.color = '#39ff14';
@@ -564,7 +481,6 @@ function showNotification(message) {
     notification.className = 'notification';
     notification.textContent = message;
     
-    // Стили
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -582,12 +498,10 @@ function showNotification(message) {
     
     document.body.appendChild(notification);
     
-    // Анимация появления
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 10);
     
-    // Автоудаление через 3 секунды
     setTimeout(() => {
         notification.style.transform = 'translateX(120%)';
         setTimeout(() => {
@@ -598,8 +512,6 @@ function showNotification(message) {
     }, 3000);
 }
 
-// ==================== ДОПОЛНИТЕЛЬНЫЕ СКРИПТЫ ====================
-// Typewriter эффект для заголовка
 function initTypewriter() {
     const heroTitle = document.getElementById('heroTitle');
     if (!heroTitle) return;
@@ -619,27 +531,8 @@ function initTypewriter() {
     setTimeout(typeWriter, 1000);
 }
 
-// Инициализация после полной загрузки
-window.addEventListener('load', function() {
-    console.log('[X-GEN] Window fully loaded');
-    initTypewriter();
-});
-
-// Создаем фейковый файл loader.exe при необходимости
+// Создаем фейковый файл x-gen.exe в папке assets
 function createFakeLoader() {
-    const fakeExeContent = `X-GEN Cheat Loader v4.2
-=========================
-This is a demonstration file.
-Real cheat loader would be here.
-
-Features:
-- Memory Injection
-- Anti-Cheat Bypass
-- HWID Spoofer
-- Auto-Updater
-
-Warning: For educational purposes only!`;
-    
-    // Можно сохранить в localStorage для демонстрации
-    localStorage.setItem('xgen_loader_content', fakeExeContent);
+    // Это функция только для демонстрации
+    console.log('[X-GEN] Fake loader would be created here');
 }
