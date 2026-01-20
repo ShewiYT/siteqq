@@ -21,22 +21,23 @@ const translations_en = {
         
         // Hero section
         "hero_title": "POWERFUL CHEATS FOR YOUR GAMES",
-        "hero_desc": "Invisible ESP, perfect Aimbot, full control. Updated daily. No bans.",
+        "hero_desc": "Invisible ESP, perfect Aimbot, full control. Updated daily. No bans. COMPLETELY FREE.",
         "stat_users": "Active users",
         "stat_games": "Games supported",
         "stat_undetected": "Undetected",
-        "hero_cta": "GET ACCESS",
-        "terminal_title": "X-GEN LOADER v4.2",
+        "hero_cta": "DOWNLOAD FREE",
+        "terminal_title": "X-GEN LOADER v6.0",
+        "free_badge": "COMPLETELY FREE",
         
         // Games section
         "games_title": "CHOOSE GAME",
-        "games_subtitle": "Most popular games with cheat support",
+        "games_subtitle": "Most popular games with cheat support - 100% FREE",
         "filter_all": "All",
         "filter_fps": "FPS",
         "filter_battle": "Battle Royale",
         "filter_other": "Other",
         "top_cheats": "Top Cheats",
-        "download_btn": "DOWNLOAD CHEAT",
+        "download_btn": "DOWNLOAD X-GEN.EXE",
         "downloading": "DOWNLOADING...",
         
         // Cheat descriptions for games
@@ -71,33 +72,45 @@ const translations_en = {
         "pubg_cheat1": "See enemies through terrain",
         "pubg_cheat2": "Auto-aim",
         
+        "valorant_cheat1": "Auto aim with custom settings",
+        "valorant_cheat2": "Walls become transparent",
+        
+        "fortnite_cheat1": "Smart aiming without detection",
+        "fortnite_cheat2": "Player and loot highlighting",
+        
         "destiny_cheat1": "Automatic aiming",
         "destiny_cheat2": "Unlimited ammo",
         
         // Updates
         "updates_title": "LATEST UPDATES",
         "updates_subtitle": "Cheats updated daily to maintain stealth",
-        "month_jan": "JAN",
-        "update1_title": "The Finals - Full Package v2.1",
-        "update1_desc": "Added smart Aimbot with destruction physics. Fixed EAC detections.",
-        "update2_title": "Rust - ESP Enhanced",
-        "update2_desc": "Now shows containers, loot and players through walls. Updated injector.",
-        "update3_title": "New Game: Ark Raiders",
-        "update3_desc": "Full support from day one. ESP, Aimbot, Wallhack.",
+        "update_note": "Updates released every day after game patches",
+        
+        // FAQ
+        "faq_title": "FAQ - FREQUENTLY ASKED QUESTIONS",
+        "faq_subtitle": "Answers to most common questions about free cheats",
+        "faq_q1": "Is it really free?",
+        "faq_a1": "Yes, our cheat is completely free and always will be. We don't plan to introduce paid versions. All features are available without restrictions.",
+        "faq_q2": "How does your cheat work?",
+        "faq_a2": "Cheat uses direct memory injection, bypassing anti-cheat systems. We update our methods daily to remain undetected.",
+        "faq_q3": "Is it safe to use cheats?",
+        "faq_a3": "Our cheats have 99.9% undetected rate. We use HWID spoofers and regular updates. However, there is always ban risk with obvious usage.",
+        "faq_q4": "Do I need to disable antivirus?",
+        "faq_a4": "Yes, most antiviruses recognize cheat as threat. Add cheat folder to antivirus exceptions before launching.",
+        "faq_q5": "How often are updates released?",
+        "faq_a5": "We release updates every day after game patches. Usually within 2-6 hours after game update.",
+        "faq_q6": "Why is your cheat free?",
+        "faq_a6": "We believe in free access to gaming tools. Our goal is to provide quality cheats to all players without restrictions.",
         
         // Footer
-        "footer_desc": "Most advanced game cheats since 2018. Constant updates and support.",
+        "footer_desc": "Most advanced game cheats since 2018. Completely free. Constant updates.",
         "footer_links": "Links",
         "footer_tos": "Terms of Service",
         "footer_privacy": "Privacy Policy",
-        "footer_refund": "Refund Policy",
+        "footer_donate": "Support Project",
         "footer_contact": "Contact",
         "footer_warning": "Warning",
         "footer_warning_text": "Using cheats may lead to account ban. For educational purposes only. We are not responsible.",
-        "footer_copyright": "© 2024 X-GEN HACK. All rights reserved.",
-        
-        // Chat
-        "chat_title": "Live Support",
-        "chat_placeholder": "Type a message..."
+        "footer_copyright": "© 2026 X-GEN HACK. All rights reserved."
     }
 };
