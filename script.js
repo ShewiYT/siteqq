@@ -90,6 +90,9 @@ function initSite() {
     
     // 8. Typewriter эффект
     initTypewriter();
+    
+    // 9. Инициализация SEO блока
+    initSeoBlock();
 }
 
 // ==================== МНОГОЯЗЫЧНОСТЬ ====================
@@ -166,6 +169,7 @@ function initLangSwitcher() {
         initGames();
         generateDailyUpdates();
         initFAQ();
+        initSeoBlock();
     });
 }
 
@@ -234,7 +238,7 @@ function initGames() {
         },
         {
             id: 8, name: 'Escape from Tarkov', category: 'fps',
-            image: 'https://images.unsplash.com/photo-1618331833071-1c0c6ee3d19e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://images.unsplash.com/photo1618331833071-1c0c6ee3d19e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
             cheats: [
                 { name: 'Loot ESP', desc_key: 'tarkov_cheat1' },
                 { name: 'Radar Hack', desc_key: 'tarkov_cheat2' }
@@ -312,7 +316,7 @@ function renderGames() {
                 </div>
                 <button class="download-btn" data-game="${game.name}">
                     <i class="fas fa-download"></i>
-                    <span data-i18n="download_btn">СКАЧАТЬ Loader</span>
+                    <span data-i18n="download_btn">СКАЧАТЬ X-GEN.EXE</span>
                 </button>
             </div>
         `;
@@ -470,6 +474,20 @@ function initFAQ() {
     }
 }
 
+// ==================== SEO БЛОК ====================
+function initSeoBlock() {
+    const seoBlocks = document.querySelectorAll('.seo-block');
+    
+    // Показываем блок для текущего языка, скрываем остальные
+    seoBlocks.forEach(block => {
+        if (block.dataset.lang === currentLang) {
+            block.style.display = 'block';
+        } else {
+            block.style.display = 'none';
+        }
+    });
+}
+
 // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
 function updateOnlineCounter() {
     const counter = document.getElementById('onlineCount');
@@ -558,4 +576,3 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
-
