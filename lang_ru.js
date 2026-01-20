@@ -36,8 +36,8 @@ const translations_ru = {
         "filter_fps": "Шутеры",
         "filter_battle": "Баттл-рояли",
         "filter_other": "Другие",
-        "top_cheats": "Топ читы",
-        "download_btn": "СКАЧАТЬ X-GEN.EXE",
+        "top_cheats": "Undetected",
+        "download_btn": "СКАЧАТЬ ",
         "downloading": "ЗАГРУЗКА...",
         
         // Описания читов для игр
@@ -114,3 +114,4 @@ const translations_ru = {
         "footer_copyright": "© 2026 X-GEN HACK. Все права защищены."
     }
 };
+
