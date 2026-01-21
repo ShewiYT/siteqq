@@ -409,14 +409,14 @@ function generateDailyUpdates() {
     updatesList.innerHTML = '';
     
     const updates = [
-        { game: 'Valorant', type: 'Aimbot улучшен', desc: 'Обновлен алгоритм прицеливания, уменьшена задержка, исправлен детект Vanguard' },
-        { game: 'Fortnite', type: 'ESP обновлен', desc: 'Добавлено отображение лута и сундуков, улучшена стабильность на DX12' },
-        { game: 'Rust', type: 'Обход EAC', desc: 'Исправлена проблема с детектом новой версии EAC, добавлен спуфер сигнатур' },
-        { game: 'CS2', type: 'Skin Changer', desc: 'Добавлены новые скины и паттерны, улучшена скорость замены моделей' },
-        { game: 'Apex Legends', type: 'No Recoil v2.5', desc: 'Улучшена система контроля отдачи, добавлены профили для каждого оружия' },
-        { game: 'The Finals', type: 'Wallhack v3.1', desc: 'Исправлено отображение через разрушаемые стены, добавлена подсветка оборудования' },
-        { game: 'Warzone', type: 'Обновление лоадера', desc: 'Улучшена скорость инжекта, уменьшено время загрузки чита в память' },
-        { game: 'Escape from Tarkov', type: 'Radar Hack', desc: 'Обновлена карта всех локаций, добавлены метки ключей и квестовых предметов' }
+        { game: 'Valorant', type: 'Aimbot has been improved', desc: 'The aiming algorithm has been updated, the delay has been reduced, and the Vanguard detector has been fixed' },
+        { game: 'Fortnite', type: 'ESP updated', desc: 'Added loot and chest display, improved stability on DX12' },
+        { game: 'Rust', type: 'Bypass EAC', desc: 'Fixed a problem with the detection of the new version of EAC, added a signature spoofer' },
+        { game: 'CS2', type: 'Skin Changer', desc: 'New skins and patterns have been added, and the model replacement rate has been improved.' },
+        { game: 'Apex Legends', type: 'No Recoil v2.5', desc: 'Improved recoil control system, added profiles for each weapon' },
+        { game: 'The Finals', type: 'Wallhack v3.1', desc: 'Fixed the display through destructible walls, added equipment illumination' },
+        { game: 'Warzone', type: 'Loader Update', desc: 'Improved injection speed, reduced cheat loading time in memory' },
+        { game: 'Escape from Tarkov', type: 'Radar Hack', desc: 'Updated the map of all locations, added tags for keys and quest items.' }
     ];
     
     // Берем последние 4 обновления
@@ -584,6 +584,7 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
 
 
 
