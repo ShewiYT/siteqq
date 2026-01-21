@@ -272,8 +272,8 @@ function initGames() {
             id: 11, name: 'Hytale', category: 'other',
             image: 'https://media.discordapp.net/attachments/1460673185237172409/1463227162109677600/Duck-ai-image-2026-01-20-17-42.jpeg?ex=6971b8bc&is=6970673c&hm=2476d2fbc0a9c71ad38d73e467c45ea4626894d9ee2a8cea2481d3fcc7f0e850&=&format=webp&width=1533&height=1022',
             cheats: [
-                { name: 'Soft Aim', desc_key: 'hytale_cheat1' },
-                { name: 'ESP', desc_key: 'hytale_cheat2' }
+                { name: 'GODMODE', desc_key: 'hytale_cheat1' },
+                { name: 'Teleport', desc_key: 'hytale_cheat2' }
             ]
         },
         {
@@ -584,6 +584,7 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
 
 
 
