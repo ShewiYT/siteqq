@@ -204,7 +204,7 @@ function initGames() {
         },
         {
             id: 4, name: 'The Finals', category: 'fps',
-            image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463224130785644625/Duck-ai-image-2026-01-20-17-30.jpeg?ex=6971b5ea&is=6970646a&hm=14d041319ebc3ad135b2521e482391b46e95ee5dcac6990d60a3e8fe17d6abe8&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Wallhack Ultimate', desc_key: 'finals_cheat1' },
                 { name: 'Perfect Aim', desc_key: 'finals_cheat2' }
@@ -212,7 +212,7 @@ function initGames() {
         },
         {
             id: 5, name: 'Apex Legends', category: 'battle',
-            image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463219065035161704/Duck-ai-image-2026-01-20-17-10.jpeg?ex=6971b132&is=69705fb2&hm=bf228a15319ef483f91ed07c4d65ad3d94055bee9e3fdf2c2aff3768aad6e683&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'ESP Pro', desc_key: 'apex_cheat1' },
                 { name: 'No Recoil', desc_key: 'apex_cheat2' },
@@ -221,7 +221,7 @@ function initGames() {
         },
         {
             id: 6, name: 'CS2', category: 'fps',
-            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463150964247629915/ChatGPT_Image_Jan_20_2026_12_35_28_PM.png?ex=6970c905&is=696f7785&hm=bf88c0743e4101c628d0243d5746e19c3d9e1f9efab09e421606bba1cbdc9786&=&format=webp&quality=lossless&width=1533&height=1022',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463236064863850703/Duck-ai-image-2026-01-20-18-17.jpeg?ex=6971c107&is=69706f87&hm=4c0bd1135594b7b8d9d9c38968459182e17045d992485da734f6adb55c8b0792&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Triggerbot', desc_key: 'cs2_cheat1' },
                 { name: 'Skin Changer', desc_key: 'cs2_cheat2' },
@@ -230,7 +230,7 @@ function initGames() {
         },
         {
             id: 7, name: 'Warzone', category: 'battle',
-            image: 'https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463231577118216254/Duck-ai-image-2026-01-20-17-59.jpeg?ex=6971bcd9&is=69706b59&hm=0be7fcc7b362464bb5bc4bd3fd46652b3eaad16e0a8ca39de396ef04a3d015e0&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Aimbot Lite', desc_key: 'warzone_cheat1' },
                 { name: 'ESP Advanced', desc_key: 'warzone_cheat2' }
@@ -238,7 +238,7 @@ function initGames() {
         },
         {
             id: 8, name: 'Escape from Tarkov', category: 'fps',
-            image: 'https://images.unsplash.com/photo1618331833071-1c0c6ee3d19e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463235510876242145/Duck-ai-image-2026-01-20-18-13.jpeg?ex=6971c083&is=69706f03&hm=e1b12f64a23e3e8419034ca7d85720a0fcef334593026c6e7ca64bb8c58ab599&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Loot ESP', desc_key: 'tarkov_cheat1' },
                 { name: 'Radar Hack', desc_key: 'tarkov_cheat2' }
@@ -246,7 +246,7 @@ function initGames() {
         },
         {
             id: 9, name: 'PUBG', category: 'battle',
-            image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463230496778485913/Duck-ai-image-2026-01-20-17-55.jpeg?ex=6971bbd7&is=69706a57&hm=60f245ee3fcaaee456ba9b776e6ff4af3fdbfcc16b746b28fd16b71ad5cf3379&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'ESP Vision', desc_key: 'pubg_cheat1' },
                 { name: 'Aimbot', desc_key: 'pubg_cheat2' }
@@ -254,7 +254,7 @@ function initGames() {
         },
         {
             id: 10, name: 'Valorant', category: 'fps',
-            image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463228118918631636/Duck-ai-image-2026-01-20-17-46.jpeg?ex=6971b9a1&is=69706821&hm=9b039e862f5aa8021d797a3a6b21728e2fbfa06e07b973d7748660cad502f907&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Aimbot', desc_key: 'valorant_cheat1' },
                 { name: 'Wallhack', desc_key: 'valorant_cheat2' }
@@ -262,15 +262,23 @@ function initGames() {
         },
         {
             id: 11, name: 'Fortnite', category: 'battle',
-            image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463229031213174796/Duck-ai-image-2026-01-20-17-49.jpeg?ex=6971ba7a&is=697068fa&hm=4a00d2072df0cddfe095ce279ab058ee9be1368ecaa108bd4340707cfd245652&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Soft Aim', desc_key: 'fortnite_cheat1' },
                 { name: 'ESP', desc_key: 'fortnite_cheat2' }
             ]
         },
         {
+            id: 11, name: 'Hytale', category: 'other',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463227162109677600/Duck-ai-image-2026-01-20-17-42.jpeg?ex=6971b8bc&is=6970673c&hm=2476d2fbc0a9c71ad38d73e467c45ea4626894d9ee2a8cea2481d3fcc7f0e850&=&format=webp&width=1533&height=1022',
+            cheats: [
+                { name: 'Soft Aim', desc_key: 'hytale_cheat1' },
+                { name: 'ESP', desc_key: 'hytale_cheat2' }
+            ]
+        },
+        {
             id: 12, name: 'Destiny 2', category: 'fps',
-            image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463235463296061552/Duck-ai-image-2026-01-20-18-15.jpeg?ex=6971c078&is=69706ef8&hm=ff6b911c232b842596aa146a45a24de33e15c52088401e0beea6bf9c1461e1ec&=&format=webp&width=1533&height=1022',
             cheats: [
                 { name: 'Auto Aim', desc_key: 'destiny_cheat1' },
                 { name: 'Unlimited Ammo', desc_key: 'destiny_cheat2' }
@@ -576,5 +584,6 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
 
 
