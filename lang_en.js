@@ -55,6 +55,9 @@ const translations_en = {
         "finals_cheat1": "Walls transparent, enemies highlighted",
         "finals_cheat2": "100% headshot accuracy",
         
+        "hytale_cheat1": "The ability to turn on immortality (God mode)",
+        "hytale_cheat2": "The ability to teleport around the world",
+        
         "apex_cheat1": "Advanced ESP with health info",
         "apex_cheat2": "No recoil at all",
         "apex_cheat3": "Increased run speed",
@@ -114,5 +117,6 @@ const translations_en = {
         "footer_copyright": "© 2026 X-GEN HACK. All rights reserved."
     }
 };
+
 
 
