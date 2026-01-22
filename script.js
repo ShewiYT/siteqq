@@ -178,7 +178,7 @@ function initGames() {
     gamesData = [
         {
             id: 1, name: 'Rust', category: 'other',
-            image: 'https://media.discordapp.net/attachments/1460673185237172409/1463150964948209674/ChatGPT_Image_Jan_20_2026_12_36_19_PM.png?ex=6970c906&is=696f7786&hm=c0daf7050538629ea131eab5709729c5c3eac8d2177aca14247dbef70a64ba2d&=&format=webp&quality=lossless&width=1533&height=1022',
+            image: 'https://storage.yandexcloud.net/fotora.ru/88d5391061474126.png',
             cheats: [
                 { name: 'ESP Vision', desc_key: 'rust_cheat1' },
                 { name: 'Aimbot Pro', desc_key: 'rust_cheat2' },
@@ -584,6 +584,7 @@ window.addEventListener('load', function() {
     console.log('[X-GEN] Window fully loaded');
     // Дополнительные инициализации при необходимости
 });
+
 
 
 
